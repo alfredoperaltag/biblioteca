@@ -14,7 +14,3 @@ index.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
             templateUrl: "/vistas/index/login.html"
         });
 }]);
-
-index.controller("indexController", function ($scope) {
-    $scope.minombre = "Alfredo Peralta"
-});
