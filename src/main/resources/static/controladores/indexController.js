@@ -1,4 +1,4 @@
-/* let index = angular.module("biblioteca", ["ngRoute"], function ($compileProvider) {
+let index = angular.module("biblioteca", ["ngRoute"], function ($compileProvider) {
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|javascript):/);
 });
 index.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
@@ -17,4 +17,4 @@ index.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
 
 index.controller("indexController", function ($scope) {
     $scope.minombre = "Alfredo Peralta"
-}) */
+});

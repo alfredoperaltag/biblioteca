@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Biblioteca Digital</title>
+    <!-- Custom CSS -->
+    <link href="wwwroot/assets/css/default.css" rel="stylesheet" type="text/css" />
     <!-- Angular -->
     <script src="wwwroot/assets/js/angularjs/angular.min.js"></script>
     <script src="wwwroot/assets/js/angularjs/angular-locale_es-mx.js"></script>
     <script src="wwwroot/assets/js/angularjs/angular-route.min.js"></script>
 </head>
 
-<body data-ng-controller="indexController">
+<body class="login-sidebar-background" data-ng-controller="indexController">
+    <!-- {{"hola "+minombre}} -->
+
     <!-- Preloader -->
     <div class="preloader-it">
         <div class="preloader">
@@ -27,8 +31,8 @@
             </div>
         </div>
     </div>
-    <button class="btn-btn-success">boton</button>
     <!-- //Preloader -->
+
     <data-ng-view></data-ng-view>
 
     <!-- JQuery -->
@@ -36,7 +40,9 @@
     <!-- Bootstrap -->
     <script src="wwwroot/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Slimscroll JavaScript -->
-    <!-- <script src="wwwroot/assets/js/jquery.slimscroll.js"></script> -->
+    <script src="wwwroot/assets/js/jquery.slimscroll.js"></script>
+    <!-- Init JavaScript -->
+    <script src="wwwroot/assets/js/init.js"></script>
     <!-- Biblioteca -->
     <script src="controladores/indexController.js"></script>
 </body>
