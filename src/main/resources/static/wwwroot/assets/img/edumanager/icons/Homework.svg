@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96pt" height="96pt" viewBox="0 0 96 96" version="1.1">
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:#FF9800;fill-opacity:1;" d="M 18 26 L 38 26 L 38 70 L 18 70 Z "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#90A4AE;fill-opacity:1;" d="M 18 70 L 38 70 L 38 78 L 18 78 Z "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#E57373;fill-opacity:1;" d="M 38 78 L 18 78 L 18 82 C 18 84.203125 19.796875 86 22 86 L 34 86 C 36.203125 86 38 84.203125 38 82 Z "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#FFA726;fill-opacity:1;" d="M 24 26 L 32 26 L 32 70 L 24 70 Z "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#FFC107;fill-opacity:1;" d="M 38 26 L 33 18 L 23 18 L 18 26 Z "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#37474F;fill-opacity:1;" d="M 28 10 L 23 18 L 33 18 Z "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#9EB0B9;fill-opacity:1;" d="M 24 70 L 32 70 L 32 78 L 24 78 Z "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#E78080;fill-opacity:1;" d="M 24 78 L 32 78 L 32 86 L 24 86 Z "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#FFD54F;fill-opacity:1;" d="M 30 18 L 26 18 L 24 26 L 32 26 Z "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#2196F3;fill-opacity:1;" d="M 74 10 L 54 10 C 51.796875 10 50 11.796875 50 14 L 50 82 C 50 84.203125 51.796875 86 54 86 L 74 86 C 76.203125 86 78 84.203125 78 82 L 78 14 C 78 11.796875 76.203125 10 74 10 Z M 64 22 C 61.796875 22 60 20.203125 60 18 C 60 15.796875 61.796875 14 64 14 C 66.203125 14 68 15.796875 68 18 C 68 20.203125 66.203125 22 64 22 Z "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#1565C0;fill-opacity:1;" d="M 50 30 L 60 30 L 60 34 L 50 34 Z "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#1565C0;fill-opacity:1;" d="M 50 38 L 56 38 L 56 42 L 50 42 Z "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#1565C0;fill-opacity:1;" d="M 50 46 L 60 46 L 60 50 L 50 50 Z "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#1565C0;fill-opacity:1;" d="M 50 54 L 56 54 L 56 58 L 50 58 Z "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#1565C0;fill-opacity:1;" d="M 50 62 L 60 62 L 60 66 L 50 66 Z "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#1565C0;fill-opacity:1;" d="M 50 70 L 56 70 L 56 74 L 50 74 Z "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:#1565C0;fill-opacity:1;" d="M 50 78 L 60 78 L 60 82 L 50 82 Z "/>
+</g>
+</svg>

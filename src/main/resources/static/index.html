@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" data-ng-app="biblioteca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Biblioteca Digital</title>
+    <!-- Angular -->
+    <script src="wwwroot/assets/js/angularjs/angular.min.js"></script>
+    <script src="wwwroot/assets/js/angularjs/angular-locale_es-mx.js"></script>
+    <script src="wwwroot/assets/js/angularjs/angular-route.min.js"></script>
+</head>
+
+<body data-ng-controller="indexController">
+    <!-- Preloader -->
+    <div class="preloader-it">
+        <div class="preloader">
+            <div class="circles-1">
+                <div class="circles-1-center"></div>
+                <div class="circles-1"></div>
+                <div class="circles-1"></div>
+                <div class="circles-1"></div>
+                <div class="circles-1"></div>
+                <div class="circles-1"></div>
+                <div class="circles-1"></div>
+            </div>
+        </div>
+    </div>
+    <button class="btn-btn-success">boton</button>
+    <!-- //Preloader -->
+    <data-ng-view></data-ng-view>
+
+    <!-- JQuery -->
+    <script src="wwwroot/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="wwwroot/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Slimscroll JavaScript -->
+    <!-- <script src="wwwroot/assets/js/jquery.slimscroll.js"></script> -->
+    <!-- Biblioteca -->
+    <script src="controladores/indexController.js"></script>
+</body>
+
+</html>
