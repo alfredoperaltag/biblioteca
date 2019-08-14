@@ -1,0 +1,250 @@
+<div class="container-fluid min-ht-600" data-ng-init="principalLoad()">
+    <!-- Title -->
+    <div class="row heading-bg">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h5 class="txt-dark">Principal</h5>
+        </div>
+        <!-- Breadcrumb -->
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            <ol class="breadcrumb">
+                <!--<li><a href="./index.html">Dashboard</a></li>-->
+                <!--<li><a href="#"><span>Other Pages</span></a></li>-->
+                <li class="active"><span>Principal</span></li>
+            </ol>
+        </div>
+        <!-- /Breadcrumb -->
+    </div>
+    <!-- /Title -->
+
+    <!--Videos-->
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+        <div class="panel panel-default card-view pa-0">
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body pa-0">
+                    <div class="sm-data-box">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-6 pl-20 pr-0 data-wrap-left"> <span
+                                        class="txt-dark block counter"><span
+                                            class="counter-anim">{{archivo.videos}}</span></span> <span
+                                        class="weight-500 uppercase-font block">Videos</span> </div>
+                                <div class="col-xs-6 text-center  pl-0 pr-0 pt-30 data-wrap-right">
+                                    <div id="VideosID"><img src="../../wwwroot/assets/img/edumanager/icons/Video.svg"
+                                            height="50%" width="50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Audios-->
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+        <div class="panel panel-default card-view pa-0">
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body pa-0">
+                    <div class="sm-data-box">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-6 pl-20 pr-0 data-wrap-left"> <span
+                                        class="txt-dark block counter"><span
+                                            class="counter-anim">{{archivo.audios}}</span></span> <span
+                                        class="weight-500 uppercase-font block">Audios</span> </div>
+                                <div class="col-xs-6 text-center  pl-0 pr-0 pt-30 data-wrap-right">
+                                    <div id="AudiosID"><img src="../../wwwroot/assets/img/edumanager/icons/Audio.svg"
+                                            height="50%" width="50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Imagenes-->
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+        <div class="panel panel-default card-view pa-0">
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body pa-0">
+                    <div class="sm-data-box">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-6 pl-20 pr-0 data-wrap-left"> <span
+                                        class="txt-dark block counter"><span
+                                            class="counter-anim">{{archivo.imagenes}}</span></span> <span
+                                        class="weight-500 uppercase-font block">Imagenes</span> </div>
+                                <div class="col-xs-6 text-center  pl-0 pr-0 pt-30 data-wrap-right">
+                                    <div id="ImagenesID"><img src="../../wwwroot/assets/img/edumanager/icons/Images.svg"
+                                            height="50%" width="50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Arte-->
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+        <div class="panel panel-default card-view pa-0">
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body pa-0">
+                    <div class="sm-data-box">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-6 pl-20 pr-0 data-wrap-left"> <span
+                                        class="txt-dark block counter"><span
+                                            class="counter-anim">{{archivo.arte}}</span></span> <span
+                                        class="weight-500 uppercase-font block">Arte</span> </div>
+                                <div class="col-xs-6 text-center  pl-0 pr-0 pt-30 data-wrap-right">
+                                    <div id="ArtesID"><img src="../../wwwroot/assets/img/edumanager/icons/Art.svg"
+                                            height="50%" width="50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Tesis-->
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+        <div class="panel panel-default card-view pa-0">
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body pa-0">
+                    <div class="sm-data-box">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-6 pl-20 pr-0 data-wrap-left"> <span
+                                        class="txt-dark block counter"><span
+                                            class="counter-anim">{{archivo.tesis}}</span></span> <span
+                                        class="weight-500 uppercase-font block">Tesis</span> </div>
+                                <div class="col-xs-6 text-center  pl-0 pr-0 pt-30 data-wrap-right">
+                                    <div><img src="../../wwwroot/assets/img/edumanager/icons/Thesis.svg" height="50%"
+                                            width="50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Libros-->
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+        <div class="panel panel-default card-view pa-0">
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body pa-0">
+                    <div class="sm-data-box">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-6 pl-20 pr-0 data-wrap-left"> <span
+                                        class="txt-dark block counter"><span
+                                            class="counter-anim">{{archivo.libros}}</span></span> <span
+                                        class="weight-500 uppercase-font block">Libros</span> </div>
+                                <div class="col-xs-6 text-center  pl-0 pr-0 pt-30 data-wrap-right">
+                                    <div><img src="../../wwwroot/assets/img/edumanager/icons/Books.svg" height="50%"
+                                            width="50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Publicaciones-->
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+        <div class="panel panel-default card-view pa-0">
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body pa-0">
+                    <div class="sm-data-box">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-6 pl-20 pr-0 data-wrap-left"> <span
+                                        class="txt-dark block counter"><span
+                                            class="counter-anim">{{archivo.publicaciones}}</span></span> <span
+                                        class="weight-500 uppercase-font block">Publicaciones</span> </div>
+                                <div class="col-xs-6 text-center  pl-0 pr-0 pt-30 data-wrap-right">
+                                    <div><img src="../../wwwroot/assets/img/edumanager/icons/News.svg" height="50%"
+                                            width="50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Diaposistivas-->
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+        <div class="panel panel-default card-view pa-0">
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body pa-0">
+                    <div class="sm-data-box">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-6 pl-20 pr-0 data-wrap-left"> <span
+                                        class="txt-dark block counter"><span
+                                            class="counter-anim">{{archivo.diapositivas}}</span></span> <span
+                                        class="weight-500 uppercase-font block">Diapositivas</span> </div>
+                                <div class="col-xs-6 text-center  pl-0 pr-0 pt-30 data-wrap-right">
+                                    <div><img src="../../wwwroot/assets/img/edumanager/icons/Presentation.svg"
+                                            height="50%" width="50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Tareas-->
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+        <div class="panel panel-default card-view pa-0">
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body pa-0">
+                    <div class="sm-data-box">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-6 pl-20 pr-0 data-wrap-left"> <span
+                                        class="txt-dark block counter"><span
+                                            class="counter-anim">{{archivo.tareas}}</span></span> <span
+                                        class="weight-500 uppercase-font block">Tareas Y Soluciones</span> </div>
+                                <div class="col-xs-6 text-center  pl-0 pr-0 pt-30 data-wrap-right">
+                                    <div><img src="../../wwwroot/assets/img/edumanager/icons/Homework.svg" height="50%"
+                                            width="50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Otros Recursos-->
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+        <div class="panel panel-default card-view pa-0">
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body pa-0">
+                    <div class="sm-data-box">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-6 pl-20 pr-0 data-wrap-left"> <span
+                                        class="txt-dark block counter"><span
+                                            class="counter-anim">{{archivo.otrosrecursos}}</span></span> <span
+                                        class="weight-500 uppercase-font block">Otros Recursos</span> </div>
+                                <div class="col-xs-6 text-center  pl-0 pr-0 pt-30 data-wrap-right">
+                                    <div><img src="../../wwwroot/assets/img/edumanager/icons/ExtraClass.svg"
+                                            height="50%" width="50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
