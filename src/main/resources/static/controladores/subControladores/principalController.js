@@ -17,8 +17,7 @@ dashboard.controller("principalController", function ($scope, $http) {
 
     $scope.principalLoad = function () {
         for (var i = 0; i < $scope.esquema.length; i++) {
-            $scope.archivo.tipo = $scope.esquema[i].original;
-            $scope.cantidadDeCadaTipo($scope.archivo.tipo);
+            $scope.cantidadDeCadaTipo($scope.esquema[i].original);
         }
     };
 
@@ -26,38 +25,28 @@ dashboard.controller("principalController", function ($scope, $http) {
         $http({
             url: '/archivos/' + tipo, method: 'GET'
         }).then(function (response) {
-            //console.log(response.data.length);
-            if (tipo === "video") {
-                $scope.archivo.videos = response.data.length;
+            switch (tipo) {
+                case 'video':$scope.archivo.videos = response.data.length;
+                    break;
+                case 'audio':$scope.archivo.audios = response.data.length;
+                    break;
+                case 'imagen':$scope.archivo.imagenes = response.data.length;
+                    break;
+                case 'arte': $scope.archivo.arte = response.data.length;
+                    break;
+                case 'tesis':$scope.archivo.tesis = response.data.length;
+                    break;
+                case 'libros':$scope.archivo.libros = response.data.length;
+                    break;
+                case 'publicaciones':$scope.archivo.publicaciones = response.data.length;
+                    break;
+                case 'diapositivas':$scope.archivo.diapositivas = response.data.length;
+                    break;
+                case 'tareas':$scope.archivo.tareas = response.data.length;
+                    break;
+                case 'otrosRecursos':$scope.archivo.otrosRecursos = response.data.length;
+                    break;
             }
-            if (tipo === "audio") {
-                $scope.archivo.audios = response.data.length;
-            }
-            if (tipo === "imagen") {
-                $scope.archivo.imagenes = response.data.length;
-            }
-            if (tipo === "arte") {
-                $scope.archivo.arte = response.data.length;
-            }
-            if (tipo === "tesis") {
-                $scope.archivo.tesis = response.data.length;
-            }
-            if (tipo === "libros") {
-                $scope.archivo.libros = response.data.length;
-            }
-            if (tipo === "publicaciones") {
-                $scope.archivo.publicaciones = response.data.length;
-            }
-            if (tipo === "diapositivas") {
-                $scope.archivo.diapositivas = response.data.length;
-            }
-            if (tipo === "tareas") {
-                $scope.archivo.tareas = response.data.length;
-            }
-            if (tipo === "otrosRecursos") {
-                $scope.archivo.otrosRecursos = response.data.length;
-            }
-
         }, function (reason) {
             console.log("REASON: " + reason);
         });

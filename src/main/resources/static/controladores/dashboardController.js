@@ -1,4 +1,4 @@
-let dashboard = angular.module("bibliotecaDashboardApp", ["ngRoute"], function ($compileProvider) {
+var dashboard = angular.module("bibliotecaDashboardApp", ["ngRoute"], function ($compileProvider) {
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|javascript):/);
 });
 
