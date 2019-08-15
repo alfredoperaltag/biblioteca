@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping(path = "/")
@@ -43,17 +45,22 @@ public class ArchivosController {
 
 
     @RequestMapping(path = "archivos/{tipo}", method = RequestMethod.GET)
-    public @ResponseBody int CantidadDeArchivos(@PathVariable("tipo")String tipoArchivo){
+    //public @ResponseBody int CantidadDeArchivos(@PathVariable("tipo")String tipoArchivo){
+    public @ResponseBody
+    List<Archivos> listarArchivosPorTipo(@PathVariable("tipo")String tipoArchivo){
         try{
             if (tipoArchivo != null){
                 log.info("Se recibe en controller: "+tipoArchivo);
-                return archivosService.numeroArchivosPorTipo(tipoArchivo);
+                //return archivosService.numeroArchivosPorTipo(tipoArchivo);
+                return archivosService.listarArchivosPorTipo(tipoArchivo);
             }
             log.warn("El tipo de archivo llega vacio");
-            return 0;
+            //return 0;
+            return null;
         }catch (Exception ex){
             log.error("ERROR: "+ex.getMessage());
-            return 0;
+            //return 0;
+            return null;
         }
     }
 }
