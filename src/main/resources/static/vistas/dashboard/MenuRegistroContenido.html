@@ -1,0 +1,221 @@
+<div class="container-fluid min-ht-600" data-ng-init="verSeccion('Principal')">
+    <!-- Title -->
+    <div class="row heading-bg">
+        <div class="col-lg-5 col-md-7 col-sm-7 col-xs-12">
+            <h5 class="txt-dark">Opciones de registro de contenido</h5>
+        </div>
+        <!-- Breadcrumb -->
+        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-12">
+            <ol class="breadcrumb">
+                <!--<li><a href="./index.html">Dashboard</a></li>-->
+                <!--<li><a href="#"><span>Other Pages</span></a></li>-->
+                <li><a href="#/">Dashboard</a></li>
+                <li><a href="javascript:void(0);">Biblioteca</a></li>
+                <li class="active"><span>Opciones de contenido</span></li>
+            </ol>
+        </div>
+        <!-- /Breadcrumb -->
+    </div>
+    <!-- /Title -->
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-danger card-view">
+                <div class="panel-heading">
+                    <div class="pull-left">
+                        <h6 class="panel-title txt-light">Contenido Digital</h6>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-wrapper collapse in">
+                    <div class="panel-body">
+                        <div class="row" data-ng-show="Seccion('Principal')">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-4 text-center">
+                                        <div class="well well-sm card-view"
+                                            onmouseover="this.style.background='#e4e4e4';"
+                                            onmouseout="this.style.background='#ffffff'"
+                                            data-ng-click="verSeccion('OpcionesMultimedia')">
+                                            <img src="../../wwwroot/assets/img/edumanager/icons/Multimedia.svg"
+                                                height="50%" width="50%">
+                                            <h6 class="mb-15">Multimedia</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 text-center">
+                                        <div class="well well-sm card-view"
+                                            onmouseover="this.style.background='#e4e4e4';"
+                                            onmouseout="this.style.background='#ffffff'"
+                                            data-ng-click="verSeccion('OpcionesDocumentos')">
+                                            <img src="../../wwwroot/assets/img/edumanager/icons/Documents.svg"
+                                                height="50%" width="50%">
+                                            <h6 class="mb-15">Documentos</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 text-center">
+                                        <div class="well well-sm card-view"
+                                            onmouseover="this.style.background='#e4e4e4';"
+                                            onmouseout="this.style.background='#ffffff'"
+                                            data-ng-click="verSeccion('OpcionesExtra')">
+                                            <img src="../../wwwroot/assets/img/edumanager/icons/Classrom.svg"
+                                                height="50%" width="50%">
+                                            <h6 class="mb-15">Recursos extra</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" data-ng-show="Seccion('OpcionesMultimedia')">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-4 text-center">
+                                        <div class="well well-sm card-view"
+                                            onmouseover="this.style.background='#e4e4e4';"
+                                            onmouseout="this.style.background='#ffffff';"
+                                            data-ng-click="cambiarVista('/registrocontenido/videos')">
+                                            <img src="../../wwwroot/assets/img/edumanager/icons/Video.svg" height="50%"
+                                                width="50%">
+                                            <h6 class="mb-15">Videos</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 text-center">
+                                        <div class="well well-sm card-view"
+                                            onmouseover="this.style.background='#e4e4e4';"
+                                            onmouseout="this.style.background='#ffffff';"
+                                            data-ng-click="cambiarVista('/registrocontenido/audios')">
+                                            <img src="../../wwwroot/assets/img/edumanager/icons/Audio.svg" height="50%"
+                                                width="50%">
+                                            <h6 class="mb-15">Audios</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 text-center">
+                                        <div class="well well-sm card-view"
+                                            onmouseover="this.style.background='#e4e4e4';"
+                                            onmouseout="this.style.background='#ffffff';"
+                                            data-ng-click="cambiarVista('/registrocontenido/imagenes')">
+                                            <img src="../../wwwroot/assets/img/edumanager/icons/Images.svg" height="50%"
+                                                width="50%">
+                                            <h6 class="mb-15">Imagenes</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 text-center">
+                                        <div class="well well-sm card-view"
+                                            onmouseover="this.style.background='#e4e4e4';"
+                                            onmouseout="this.style.background='#ffffff';"
+                                            data-ng-click="cambiarVista('/registrocontenido/arte')">
+                                            <img src="../../wwwroot/assets/img/edumanager/icons/Art.svg" height="50%"
+                                                width="50%">
+                                            <h6 class="mb-15">Arte</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 text-center"></div>
+                                    <div class="col-sm-4 text-center"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 text-center"></div>
+                                    <div class="col-sm-4 text-center"></div>
+                                    <div class="col-sm-4 text-center">
+                                        <button type="button" data-ng-click="verSeccion('Principal')"
+                                            class="btn btn-success"><i class="fa fa-arrow-left"></i> Regresar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" data-ng-show="Seccion('OpcionesDocumentos')">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-4 text-center">
+                                        <div class="well well-sm card-view"
+                                            onmouseover="this.style.background='#e4e4e4';"
+                                            onmouseout="this.style.background='#ffffff';"
+                                            data-ng-click="cambiarVista('/registrocontenido/tesis')">
+                                            <img src="../../wwwroot/assets/img/edumanager/icons/Thesis.svg" height="50%"
+                                                width="50%">
+                                            <h6 class="mb-15">Tesis</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 text-center">
+                                        <div class="well well-sm card-view"
+                                            onmouseover="this.style.background='#e4e4e4';"
+                                            onmouseout="this.style.background='#ffffff';"
+                                            data-ng-click="cambiarVista('/registrocontenido/libros')">
+                                            <img src="../../wwwroot/assets/img/edumanager/icons/Books.svg" height="50%"
+                                                width="50%">
+                                            <h6 class="mb-15">Libros</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 text-center">
+                                        <div class="well well-sm card-view"
+                                            onmouseover="this.style.background='#e4e4e4';"
+                                            onmouseout="this.style.background='#ffffff';"
+                                            data-ng-click="cambiarVista('/registrocontenido/publicaciones')">
+                                            <img src="../../wwwroot/assets/img/edumanager/icons/News.svg" height="50%"
+                                                width="50%">
+                                            <h6 class="mb-15">Publicaciones</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 text-center"></div>
+                                    <div class="col-sm-4 text-center"></div>
+                                    <div class="col-sm-4 text-center">
+                                        <button type="button" data-ng-click="verSeccion('Principal')"
+                                            class="btn btn-success"><i class="fa fa-arrow-left"></i> Regresar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row" data-ng-show="Seccion('OpcionesExtra')">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-4 text-center">
+                                        <div class="well well-sm card-view"
+                                            onmouseover="this.style.background='#e4e4e4';"
+                                            onmouseout="this.style.background='#ffffff';"
+                                            data-ng-click="cambiarVista('/registrocontenido/diapositivas')">
+                                            <img src="../../wwwroot/assets/img/edumanager/icons/Presentation.svg"
+                                                height="50%" width="50%">
+                                            <h6 class="mb-15">Diapositivas</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 text-center">
+                                        <div class="well well-sm card-view"
+                                            onmouseover="this.style.background='#e4e4e4';"
+                                            onmouseout="this.style.background='#ffffff';"
+                                            data-ng-click="cambiarVista('/registrocontenido/tareas')">
+                                            <img src="../../wwwroot/assets/img/edumanager/icons/Homework.svg"
+                                                height="50%" width="50%">
+                                            <h6 class="mb-15">Tareas</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 text-center">
+                                        <div class="well well-sm card-view"
+                                            onmouseover="this.style.background='#e4e4e4';"
+                                            onmouseout="this.style.background='#ffffff';"
+                                            data-ng-click="cambiarVista('/registrocontenido/otrosrecursos')">
+                                            <img src="../../wwwroot/assets/img/edumanager/icons/ExtraClass.svg"
+                                                height="50%" width="50%">
+                                            <h6 class="mb-15">Otros Recursos</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4 text-center"></div>
+                                    <div class="col-sm-4 text-center"></div>
+                                    <div class="col-sm-4 text-center">
+                                        <button type="button" data-ng-click="verSeccion('Principal')"
+                                            class="btn btn-success"><i class="fa fa-arrow-left"></i> Regresar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

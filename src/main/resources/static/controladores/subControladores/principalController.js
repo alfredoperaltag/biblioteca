@@ -12,7 +12,7 @@ dashboard.controller("principalController", function ($scope, $http) {
         { original: "publicaciones", nombre: "Publicaciones" },
         { original: "diapositivas", nombre: "Diapositivas" },
         { original: "tareas", nombre: "Tareas" },
-        { original: "otrosRecursos", nombre: "Otros Recursos del aula" },
+        { original: "otrosRecursos", nombre: "Otros Recursos del aula" }
     ];
 
     $scope.principalLoad = function () {
