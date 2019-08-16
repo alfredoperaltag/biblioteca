@@ -247,7 +247,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-xs-12 col-md-12" data-ng-show="Seccion('edicion')">
             <div class="panel panel-warning card-view">
                 <div class="panel-heading">
@@ -263,148 +262,136 @@
                     <form name="editarArchivoForm" autocomplete="off"
                         data-ng-submit="editarArchivo(editarArchivoForm.$valid)" novalidate>
                         <div class="panel-body">
-                            <div class="row col-md-6">
-
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-xs-12">
                                             <label for="radios"> Compartir con: </label>
-                                            <!--Color 988ACC-->
-                                            <div id="radiosE" class="radio radio-success radio-inline">
-                                                <input type="radio" data-ng-model="archivoEditar.compartir" name="radio"
-                                                    id="radio1E" value="Personal" />
-                                                <label for="radio1E" style="margin-right:30px"> Personal </label>
-                                                <input type="radio" data-ng-model="archivoEditar.compartir" name="radio"
-                                                    id="radio2E" value="Plantel" />
-                                                <label for="radio2E" style="margin-right:30px"> Plantel </label>
-                                                <input type="radio" data-ng-model="archivoEditar.compartir" name="radio"
-                                                    id="radio3E" value="Todos" />
-                                                <label for="radio3E" style="margin-right:30px"> Todos </label>
+                                            <div class="form-group">
+                                                <!--Color 988ACC-->
+                                                <div id="radiosE" class="radio radio-success radio-inline">
+                                                    <input type="radio" data-ng-model="archivoEditar.compartir"
+                                                        name="radio" id="radio1E" value="Personal" />
+                                                    <label for="radio1E" style="margin-right:30px"> Personal </label>
+                                                    <input type="radio" data-ng-model="archivoEditar.compartir"
+                                                        name="radio" id="radio2E" value="Plantel" />
+                                                    <label for="radio2E" style="margin-right:30px"> Plantel </label>
+                                                    <input type="radio" data-ng-model="archivoEditar.compartir"
+                                                        name="radio" id="radio3E" value="Todos" />
+                                                    <label for="radio3E" style="margin-right:30px"> Todos </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="txtTituloE">Titulo:</label>
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                            class="fa fa-text-height"></i></span>
+                                                    <input id="txtTituloE" type="text"
+                                                        class="form-control form-control-bold" data-ng-maxlength="120"
+                                                        maxlength="120" data-ng-model="archivoEditar.titulo"
+                                                        placeholder="El titulo aqui" required />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="cbxAreaConocimientoE">Area de Conocimiento:</label>
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                            class="fa fa-book"></i></span>
+                                                    <select id="cbxAreaConocimientoE" class="form-control" required
+                                                        data-ng-model="archivoEditar.area">
+                                                        <!--<select id="cbxAreaConocimiento" class="selectpicker" data-style="form-control btn-default btn-outline">-->
+                                                        <option data-ng-repeat="area in areaConocimiento"
+                                                            value="{{area.descripcion}}">{{area.descripcion}}
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="txtAutorE">Autor(es):</label>
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                            class="fa fa-user"></i></span>
+                                                    <input id="txtAutorE" type="text"
+                                                        class="form-control form-control-bold" data-ng-maxlength="120"
+                                                        maxlength="120" data-ng-model="archivoEditar.autor"
+                                                        placeholder="Autor" required />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="form-group">
-                                            <label for="txtTituloE">Titulo:</label>
-                                            <div class="input-group"><span class="input-group-addon"><i
-                                                        class="fa fa-text-height"></i></span>
-                                                <input id="txtTituloE" type="text"
-                                                    class="form-control form-control-bold" data-ng-maxlength="120"
-                                                    maxlength="120" data-ng-model="archivoEditar.titulo"
-                                                    placeholder="El titulo aqui" required />
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="tagsComE">Etiquetas:</label>
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                            class="fa fa-tags"></i></span>
+                                                    <tags-input class="bootstrap" id="tagsComE" use-strings="true"
+                                                        ng-model="tagsParaEditar" template="remove-tag"></tags-input>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="form-group">
-                                            <label for="cbxAreaConocimientoE">Area de Conocimiento:</label>
-                                            <div class="input-group"><span class="input-group-addon"><i
-                                                        class="fa fa-book"></i></span>
-                                                <select id="cbxAreaConocimientoE" class="form-control" required
-                                                    data-ng-model="archivoEditar.area">
-                                                    <!--<select id="cbxAreaConocimiento" class="selectpicker" data-style="form-control btn-default btn-outline">-->
-                                                    <option data-ng-repeat="area in areaConocimiento"
-                                                        value="{{area.descripcion}}">{{area.descripcion}}
-                                                    </option>
-                                                </select>
+                                    <!--DAtaPicker-->
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="fechatxtE">Año de publicación:</label>
+                                                <div class="input-group"><span class="input-group-addon"> <span
+                                                            class="fa fa-calendar"></span> </span>
+                                                    <input type="date" class="form-control  form-control-bold"
+                                                        data-ng-model="archivoEditar.anio" placeholder="2018-02-06"
+                                                        id="fechatxtE" onkeydown="return false"
+                                                        value="{{fecha | date: 'yyyy-MM-dd'}}"
+                                                        max="{{fecha | date: 'yyyy-MM-dd'}}" required />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="form-group">
-                                            <label for="txtAutorE">Autor(es):</label>
-                                            <div class="input-group"><span class="input-group-addon"><i
-                                                        class="fa fa-user"></i></span>
-                                                <input id="txtAutorE" type="text" class="form-control form-control-bold"
-                                                    data-ng-maxlength="120" maxlength="120"
-                                                    data-ng-model="archivoEditar.autor" placeholder="Autor" required />
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="txtEdicionE">Numero de edicion:</label>
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                            class="fa fa-edit"></i></span>
+                                                    <input id="txtEdicionE" type="text"
+                                                        class="form-control form-control-bold" data-ng-maxlength="40"
+                                                        maxlength="40" data-ng-model="archivoEditar.edicion"
+                                                        placeholder="Edicion" required />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <!--Etiquetas-->
-                            <div class="row col-md-6">
-
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="form-group">
-                                            <label for="tagsComE">Etiquetas:</label>
-                                            <div class="input-group"><span class="input-group-addon"><i
-                                                        class="fa fa-tags"></i></span>
-                                                <tags-input class="bootstrap" id="tagsComE" use-strings="true"
-                                                    ng-model="tagsParaEditar" template="remove-tag"></tags-input>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--DAtaPicker-->
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="form-group">
-                                            <label for="fechatxtE">Año de publicación:</label>
-                                            <div class="input-group"><span class="input-group-addon"> <span
-                                                        class="fa fa-calendar"></span> </span>
-                                                <input type="date" class="form-control  form-control-bold"
-                                                    data-ng-model="archivoEditar.anio" placeholder="2018-02-06"
-                                                    id="fechatxtE" onkeydown="return false"
-                                                    value="{{fecha | date: 'yyyy-MM-dd'}}"
-                                                    max="{{fecha | date: 'yyyy-MM-dd'}}" required />
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="form-group">
-                                            <label for="txtEdicionE">Numero de edicion:</label>
-                                            <div class="input-group"><span class="input-group-addon"><i
-                                                        class="fa fa-edit"></i></span>
-                                                <input id="txtEdicionE" type="text"
-                                                    class="form-control form-control-bold" data-ng-maxlength="40"
-                                                    maxlength="40" data-ng-model="archivoEditar.edicion"
-                                                    placeholder="Edicion" required />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="form-group">
-                                            <label for="txtDescripcionE">Descripcion:</label>
-                                            <div class="input-group"><span class="input-group-addon"><i
-                                                        class="fa fa-edit"></i></span>
-                                                <!--<label class="control-label mb-5">Descripcion:</label>-->
-
-                                                <textarea id="txtDescripcionE" class="form-control" rows="4"
-                                                    style="resize:vertical" data-ng-model="archivoEditar.descripcion"
-                                                    placeholder="Descricion"></textarea>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="txtDescripcionE">Descripcion:</label>
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                            class="fa fa-edit"></i></span>
+                                                    <!--<label class="control-label mb-5">Descripcion:</label>-->
+                                                    <textarea id="txtDescripcionE" class="form-control" rows="4"
+                                                        style="resize:vertical"
+                                                        data-ng-model="archivoEditar.descripcion"
+                                                        placeholder="Descricion"></textarea>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                         <!--</div>-->
                         <!--Fin panel body-->
-
                         <div class="panel-footer">
                             <div class="row" style="margin-bottom:10px">
                                 <div class="col-xs-12 text-right">
@@ -418,7 +405,6 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
