@@ -18,7 +18,6 @@
         <!-- /Breadcrumb -->
     </div>
     <!-- /Title -->
-
     <div class="row">
         <div class="col-xs-12 col-md-12" data-ng-show="Seccion('principal')">
             <div class="panel panel-warning card-view">
@@ -126,7 +125,7 @@
                                                         data-ng-model="archivo.anio" placeholder="2018-02-06" id="mdate"
                                                         onkeydown="return false" value="{{fecha | date: 'yyyy-MM-dd'}}"
                                                         max="{{fecha | date: 'yyyy-MM-dd'}}" required />
-    
+
                                                 </div>
                                             </div>
                                         </div>
@@ -139,8 +138,8 @@
                                                             class="fa fa-edit"></i></span>
                                                     <input id="txtEdicion" type="text"
                                                         class="form-control form-control-bold" data-ng-maxlength="40"
-                                                        maxlength="40" data-ng-model="archivo.edicion" placeholder="Edicion"
-                                                        required />
+                                                        maxlength="40" data-ng-model="archivo.edicion"
+                                                        placeholder="Edicion" required />
                                                 </div>
                                             </div>
                                         </div>
@@ -152,7 +151,7 @@
                                                 <div class="input-group"><span class="input-group-addon"><i
                                                             class="fa fa-edit"></i></span>
                                                     <!--<label class="control-label mb-5">Descripcion:</label>-->
-    
+
                                                     <textarea id="txtDescripcion" class="form-control" rows="4"
                                                         style="resize:vertical" data-ng-model="archivo.descripcion"
                                                         placeholder="Descricion"></textarea>
@@ -181,7 +180,6 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
@@ -245,7 +243,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
