@@ -11,16 +11,16 @@ dashboard.config(['$routeProvider', '$locationProvider', function ($routeProvide
         }).when("/menucontenido", {
             templateUrl: "/vistas/dashboard/MenuRegistroContenido.html",
             controller: "MenuRegistroContenidoController"
-        }).when("/registroContenido/:tipoContenido", {
+        }).when("/registrocontenido/:tipoContenido", {
             templateUrl: "/vistas/dashboard/registroContenido.html",
             controller: "registrarContenidoController"
         }).otherwise({
-            templateUrl: "/"
+            redirectTo: "/"
         });
 }]);
 
 dashboard.controller("dashboardController", function ($scope, $location) {
     $scope.cambiarVista = function (ruta) {
         $location.path(ruta);
-    }
+    };
 });

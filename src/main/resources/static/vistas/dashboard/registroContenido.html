@@ -1,0 +1,429 @@
+<div class="container-fluid min-ht-600" data-ng-init="validar()">
+    <!-- Title -->
+    <div class="row heading-bg">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h5 class="txt-dark">Metadatos de Contenido</h5>
+        </div>
+        <!-- Breadcrumb -->
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            <ol class="breadcrumb">
+                <li><a href="#/">Dashboard</a></li>
+                <li><a href="javascript:void(0);">Biblioteca</a></li>
+                <li><a href="#/menucontenido">Opciones de contenido</a></li>
+                <!--<li class="active"><span>Dashboard</span></li>-->
+                <li class="active">
+                    <span>Registro de {{archivo.tipo}}</span></li>
+            </ol>
+        </div>
+        <!-- /Breadcrumb -->
+    </div>
+    <!-- /Title -->
+
+    <div class="row">
+        <div class="col-xs-12 col-md-12" data-ng-show="Seccion('principal')">
+            <div class="panel panel-warning card-view">
+                <div class="panel-heading">
+                    <div class="pull-left">
+                        <h6 class="panel-title txt-light">Registro de {{archivo.tipo}}</h6>
+                    </div>
+                    <div class="pull-right"><span class="label label-danger capitalize-font inline-block ml-10"
+                            data-ng-model="archivo.tipo">Formatos: {{archivo.extenciones}}</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-wrapper collapse in">
+                    <form name="enviarArchivoForm" autocomplete="off"
+                        data-ng-submit="enviarArchivo(enviarArchivoForm.$valid)" novalidate>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <label for="radios"> Compartir con:</label>
+                                            <div class="form-group">
+                                                <!--Color 988ACC-->
+                                                <div id="radios" class="radio radio-success radio-inline">
+                                                    <input type="radio" data-ng-model="archivo.compartir" name="radio"
+                                                        id="radio1" value="Personal" />
+                                                    <label for="radio1" style="margin-right:30px"> Personal </label>
+                                                    <input type="radio" data-ng-model="archivo.compartir" name="radio"
+                                                        id="radio2" value="Plantel" />
+                                                    <label for="radio2" style="margin-right:30px"> Plantel </label>
+                                                    <input type="radio" data-ng-model="archivo.compartir" name="radio"
+                                                        id="radio3" value="Todos" />
+                                                    <label for="radio3" style="margin-right:30px"> Todos </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="txtTitulo">Titulo:</label>
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                            class="fa fa-text-height"></i></span>
+                                                    <input id="txtTitulo" type="text"
+                                                        class="form-control form-control-bold" data-ng-maxlength="120"
+                                                        maxlength="120" data-ng-model="archivo.titulo"
+                                                        placeholder="El titulo aqui" required />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="cbxAreaConocimiento">Area de Conocimiento:</label>
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                            class="fa fa-book"></i></span>
+                                                    <select id="cbxAreaConocimiento" class="form-control" required
+                                                        data-ng-model="archivo.area">
+                                                        <!--<select id="cbxAreaConocimiento" class="selectpicker" data-style="form-control btn-default btn-outline">-->
+                                                        <option data-ng-repeat="area in areaConocimiento"
+                                                            value="{{area.descripcion}}">{{area.descripcion}}
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="txtTitulo">Autor(es):</label>
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                            class="fa fa-user"></i></span>
+                                                    <input id="txtAutor" type="text"
+                                                        class="form-control form-control-bold" data-ng-maxlength="120"
+                                                        maxlength="120" data-ng-model="archivo.autor"
+                                                        placeholder="Autor" required />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="tagsCom">Etiquetas:</label>
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                            class="fa fa-tags"></i></span>
+                                                    <tags-input class="bootstrap" id="tagsCom" use-strings="true"
+                                                        ng-model="tags" template="remove-tag"></tags-input>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--DAtaPicker-->
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="mdate">Año de publicación:</label>
+                                                <div class="input-group"><span class="input-group-addon"> <span
+                                                            class="fa fa-calendar"></span> </span>
+                                                    <input type="date" class="form-control  form-control-bold"
+                                                        data-ng-model="archivo.anio" placeholder="2018-02-06" id="mdate"
+                                                        onkeydown="return false" value="{{fecha | date: 'yyyy-MM-dd'}}"
+                                                        max="{{fecha | date: 'yyyy-MM-dd'}}" required />
+    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="txtTitulo">Numero de edicion:</label>
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                            class="fa fa-edit"></i></span>
+                                                    <input id="txtEdicion" type="text"
+                                                        class="form-control form-control-bold" data-ng-maxlength="40"
+                                                        maxlength="40" data-ng-model="archivo.edicion" placeholder="Edicion"
+                                                        required />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <label for="txtDescripcion">Descripcion:</label>
+                                                <div class="input-group"><span class="input-group-addon"><i
+                                                            class="fa fa-edit"></i></span>
+                                                    <!--<label class="control-label mb-5">Descripcion:</label>-->
+    
+                                                    <textarea id="txtDescripcion" class="form-control" rows="4"
+                                                        style="resize:vertical" data-ng-model="archivo.descripcion"
+                                                        placeholder="Descricion"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--</div>-->
+                        <!--Fin panel body-->
+                        <div class="panel-footer">
+                            <div class="row" style="margin-bottom:10px">
+                                <div class="col-xs-12 text-right">
+                                    <button type="button" class="btn btn-danger" style="margin-right:10px"
+                                        data-ng-click="cambiarVista('/menucontenido')"><i class="fa fa-times"></i>
+                                        Cancelar
+                                    </button>
+                                    <button type="reset" class="btn btn-warning" style="margin-right:10px"><i
+                                            class="fa fa-sync"></i> Restaurar
+                                    </button>
+                                    <button type="submit" class="btn btn-success"><i class="fa fa-send"></i> Enviar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <!--Segundo panel-->
+        <div class="col-xs-12 col-md-12" data-ng-show="Seccion('principal')">
+            <div class="panel panel-success card-view">
+                <div class="panel-heading">
+                    <div class="pull-left">
+                        <h6 class="panel-title txt-light">Lista de {{archivo.tipo}}</h6>
+                    </div>
+                    <div class="pull-right">
+                        <!--<div class="pull-right"><span class="label label-danger capitalize-font inline-block ml-10" data-ng-model="archivo.tipo">Formatos: {{archivo.extenciones}}</span>-->
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-wrapper collapse in">
+                    <div class="panel-body">
+                        <!--Contenido del panel-->
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="table-responsive">
+                                    <table class="table table-hover text-center">
+                                        <thead>
+                                            <tr>
+                                                <th>Codigo</th>
+                                                <th>Compartir</th>
+                                                <th>Titulo</th>
+                                                <th>Autor</th>
+                                                <th>Publicacion</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-ng-repeat="file in listaArchivosPorTipo | orderBy: '+id'">
+                                                <td>{{file.id}}</td>
+                                                <td>{{file.compartir}}</td>
+                                                <td>{{file.titulo}}</td>
+                                                <td>{{file.autor}}</td>
+                                                <td>{{file.anio | date:'dd-MMM-yyyy'}}</td>
+                                                <td class="text-left">
+                                                    <button type="button" class="btn btn-warning"
+                                                        data-ng-click="iniciarEdicion(file);"><i class="fa fa-edit"></i>
+                                                        Editar</button>
+                                                    <button type="button" class="btn btn-danger"
+                                                        data-ng-click="borrarArchivo(file)"><i class="fa fa-times"></i>
+                                                        Borrar</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Codigo</th>
+                                                <th>Compartir</th>
+                                                <th>Titulo</th>
+                                                <th>Autor</th>
+                                                <th>Publicacion</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-md-12" data-ng-show="Seccion('edicion')">
+            <div class="panel panel-warning card-view">
+                <div class="panel-heading">
+                    <div class="pull-left">
+                        <h6 class="panel-title txt-light">Archivo a editar {{archivoEditar.tipo}}</h6>
+                    </div>
+                    <div class="pull-right"><span class="label label-danger capitalize-font inline-block ml-10"
+                            data-ng-model="archivo.tipo">Formatos: {{archivoEditar.extenciones}}</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-wrapper collapse in">
+                    <form name="editarArchivoForm" autocomplete="off"
+                        data-ng-submit="editarArchivo(editarArchivoForm.$valid)" novalidate>
+                        <div class="panel-body">
+                            <div class="row col-md-6">
+
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label for="radios"> Compartir con: </label>
+                                            <!--Color 988ACC-->
+                                            <div id="radiosE" class="radio radio-success radio-inline">
+                                                <input type="radio" data-ng-model="archivoEditar.compartir" name="radio"
+                                                    id="radio1E" value="Personal" />
+                                                <label for="radio1E" style="margin-right:30px"> Personal </label>
+                                                <input type="radio" data-ng-model="archivoEditar.compartir" name="radio"
+                                                    id="radio2E" value="Plantel" />
+                                                <label for="radio2E" style="margin-right:30px"> Plantel </label>
+                                                <input type="radio" data-ng-model="archivoEditar.compartir" name="radio"
+                                                    id="radio3E" value="Todos" />
+                                                <label for="radio3E" style="margin-right:30px"> Todos </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label for="txtTituloE">Titulo:</label>
+                                            <div class="input-group"><span class="input-group-addon"><i
+                                                        class="fa fa-text-height"></i></span>
+                                                <input id="txtTituloE" type="text"
+                                                    class="form-control form-control-bold" data-ng-maxlength="120"
+                                                    maxlength="120" data-ng-model="archivoEditar.titulo"
+                                                    placeholder="El titulo aqui" required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label for="cbxAreaConocimientoE">Area de Conocimiento:</label>
+                                            <div class="input-group"><span class="input-group-addon"><i
+                                                        class="fa fa-book"></i></span>
+                                                <select id="cbxAreaConocimientoE" class="form-control" required
+                                                    data-ng-model="archivoEditar.area">
+                                                    <!--<select id="cbxAreaConocimiento" class="selectpicker" data-style="form-control btn-default btn-outline">-->
+                                                    <option data-ng-repeat="area in areaConocimiento"
+                                                        value="{{area.descripcion}}">{{area.descripcion}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label for="txtAutorE">Autor(es):</label>
+                                            <div class="input-group"><span class="input-group-addon"><i
+                                                        class="fa fa-user"></i></span>
+                                                <input id="txtAutorE" type="text" class="form-control form-control-bold"
+                                                    data-ng-maxlength="120" maxlength="120"
+                                                    data-ng-model="archivoEditar.autor" placeholder="Autor" required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Etiquetas-->
+                            <div class="row col-md-6">
+
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label for="tagsComE">Etiquetas:</label>
+                                            <div class="input-group"><span class="input-group-addon"><i
+                                                        class="fa fa-tags"></i></span>
+                                                <tags-input class="bootstrap" id="tagsComE" use-strings="true"
+                                                    ng-model="tagsParaEditar" template="remove-tag"></tags-input>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--DAtaPicker-->
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label for="fechatxtE">Año de publicación:</label>
+                                            <div class="input-group"><span class="input-group-addon"> <span
+                                                        class="fa fa-calendar"></span> </span>
+                                                <input type="date" class="form-control  form-control-bold"
+                                                    data-ng-model="archivoEditar.anio" placeholder="2018-02-06"
+                                                    id="fechatxtE" onkeydown="return false"
+                                                    value="{{fecha | date: 'yyyy-MM-dd'}}"
+                                                    max="{{fecha | date: 'yyyy-MM-dd'}}" required />
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label for="txtEdicionE">Numero de edicion:</label>
+                                            <div class="input-group"><span class="input-group-addon"><i
+                                                        class="fa fa-edit"></i></span>
+                                                <input id="txtEdicionE" type="text"
+                                                    class="form-control form-control-bold" data-ng-maxlength="40"
+                                                    maxlength="40" data-ng-model="archivoEditar.edicion"
+                                                    placeholder="Edicion" required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <label for="txtDescripcionE">Descripcion:</label>
+                                            <div class="input-group"><span class="input-group-addon"><i
+                                                        class="fa fa-edit"></i></span>
+                                                <!--<label class="control-label mb-5">Descripcion:</label>-->
+
+                                                <textarea id="txtDescripcionE" class="form-control" rows="4"
+                                                    style="resize:vertical" data-ng-model="archivoEditar.descripcion"
+                                                    placeholder="Descricion"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!--</div>-->
+                        <!--Fin panel body-->
+
+                        <div class="panel-footer">
+                            <div class="row" style="margin-bottom:10px">
+                                <div class="col-xs-12 text-right">
+                                    <button type="button" class="btn btn-danger" style="margin-right:10px"
+                                        data-ng-click="verSeccion('principal')"><i class="fa fa-times"></i>
+                                        Cancelar
+                                    </button>
+                                    <button type="submit" class="btn btn-success"><i class="fa fa-edit"></i> Editar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
