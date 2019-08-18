@@ -3,9 +3,9 @@ dashboard.controller("principalController", function ($scope, $http) {
     $scope.archivo = {};
 
     $scope.esquema = [
-        { original: "video", nombre: "Videos" },
-        { original: "audio", nombre: "Audios" },
-        { original: "imagen", nombre: "Imagenes" },
+        { original: "videos", nombre: "Videos" },
+        { original: "audios", nombre: "Audios" },
+        { original: "imagenes", nombre: "Imagenes" },
         { original: "arte", nombre: "Arte" },
         { original: "tesis", nombre: "Tesis" },
         { original: "libros", nombre: "Libros" },
@@ -26,25 +26,25 @@ dashboard.controller("principalController", function ($scope, $http) {
             url: '/archivos/' + tipo, method: 'GET'
         }).then(function (response) {
             switch (tipo) {
-                case 'video':$scope.archivo.videos = response.data.length;
+                case 'videos': $scope.archivo.videos = response.data.length;
                     break;
-                case 'audio':$scope.archivo.audios = response.data.length;
+                case 'audios': $scope.archivo.audios = response.data.length;
                     break;
-                case 'imagen':$scope.archivo.imagenes = response.data.length;
+                case 'imagenes': $scope.archivo.imagenes = response.data.length;
                     break;
                 case 'arte': $scope.archivo.arte = response.data.length;
                     break;
-                case 'tesis':$scope.archivo.tesis = response.data.length;
+                case 'tesis': $scope.archivo.tesis = response.data.length;
                     break;
-                case 'libros':$scope.archivo.libros = response.data.length;
+                case 'libros': $scope.archivo.libros = response.data.length;
                     break;
-                case 'publicaciones':$scope.archivo.publicaciones = response.data.length;
+                case 'publicaciones': $scope.archivo.publicaciones = response.data.length;
                     break;
-                case 'diapositivas':$scope.archivo.diapositivas = response.data.length;
+                case 'diapositivas': $scope.archivo.diapositivas = response.data.length;
                     break;
-                case 'tareas':$scope.archivo.tareas = response.data.length;
+                case 'tareas': $scope.archivo.tareas = response.data.length;
                     break;
-                case 'otrosRecursos':$scope.archivo.otrosRecursos = response.data.length;
+                case 'otrosRecursos': $scope.archivo.otrosRecursos = response.data.length;
                     break;
             }
         }, function (reason) {

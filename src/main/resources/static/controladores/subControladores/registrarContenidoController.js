@@ -66,12 +66,12 @@ dashboard.controller("registrarContenidoController", function ($scope, $http, $r
             url: '/archivos/' + tipo,
             method: 'GET'
         }).then(function (response) {
-            $scope.listarArchivosPorTipo = response.data;
+            $scope.listaArchivosPorTipo = response.data;
             console.log("Tabla de: " + tipo);
             console.log(response.data);
         }, function (reason) {
             console.log("REASON: " + reason);
-            $scope.listarArchivosPorTipo = [];
+            $scope.listaArchivosPorTipo = [];
         })
     }
 });
