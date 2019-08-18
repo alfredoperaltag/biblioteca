@@ -6,8 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Biblioteca | Dashboard</title>
+    <!-- bootstrap-tagsinput CSS -->
+    <link href="wwwroot/vendors/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet"
+        type="text/css" />
+    <!-- Tags css -->
+    <link href="wwwroot/assets/js/InputTags/ng-tags-input.min.css" rel="stylesheet" type="text/css">
+    <link href="wwwroot/assets/js/InputTags/ng-tags-input.bootstrap.min.css" rel="stylesheet" type="text/css">
     <!-- Custom CSS -->
     <link href="wwwroot/assets/css/default.css" rel="stylesheet" type="text/css">
+    <link href="wwwroot/assets/css/fontawesome520/css/all.min.css" rel="stylesheet" type="text/css">
+    <!--SweetAlert-->
+    <link href="wwwroot/vendors/bower_components/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css" />
+    <script src="wwwroot/vendors/bower_components/sweetalert/dist/sweetalert.min.js"></script>
     <!--Angular-->
     <script src="wwwroot/assets/js/angularjs/angular.min.js"></script>
     <script src="wwwroot/assets/js/angularjs/angular-locale_es-mx.js"></script>
@@ -147,6 +157,18 @@
     <script src="wwwroot/vendors/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="wwwroot/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Tagsinput JavaScript -->
+    <script src="wwwroot/assets/js/InputTags/ng-tags-input.min.js"></script>
+    <!--Script para boton eliminar etiqueta-->
+    <script type="text/ng-template" id="remove-tag">
+    <div class="tag-template">
+        <div>
+            <a class="remove-button" ng-click="$removeTag()">
+            <span class="color-white">{{$getDisplayText()}}</span>
+            &#10006;</a>
+        </div>
+    </div>
+    </script>
     <!-- Switchery JavaScript -->
     <script src="wwwroot/vendors/bower_components/switchery/dist/switchery.min.js"></script>
     <!-- Slimscroll JavaScript -->

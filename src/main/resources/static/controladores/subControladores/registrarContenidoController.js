@@ -3,6 +3,7 @@ dashboard.controller("registrarContenidoController", function ($scope, $http, $r
     $scope.archivo = {};
     $scope.fecha = Date.now();
     $scope.listaArchivosPorTipo = [];
+    $scope.tagsParaEditar = [];
 
     $scope.Seccion = function (accion) {
         return accion == $scope.accion;
@@ -73,5 +74,37 @@ dashboard.controller("registrarContenidoController", function ($scope, $http, $r
             console.log("REASON: " + reason);
             $scope.listaArchivosPorTipo = [];
         })
+    }
+
+    $scope.enviarArchivo = function (esValido) {
+        if (esValido) {
+            $scope.archivo.etiqueta = $scope.tags.join().toString();
+            $scope.archivo.tipo = $scope.tipoContenido;
+            for (var i = 0; i < ($scope.esquema.length + 1); i++) {
+                if ($scope.esquema[i].original === $scope.tipoContenido) {
+                    $scope.archivo.extenciones = $scope.esquema[i].formatos;
+                    break;
+                }
+            }
+            $http({
+                url: '/archivos', method: 'POST', data: $scope.archivo
+            }).then(function (respuesta) {
+                console.log(respuesta.data.toString());
+                if (respuesta.data === true) {
+                    console.log(respuesta);
+                    $scope.archivo = {};
+                    swal("Correcto", "¡Se registro el archivo correctamente!", "success");
+                    $scope.cambiarVista('/menucontenido');
+                } else {
+                    console.log(respuesta);
+                    swal("Error", "algo salio mal", "warning");
+                }
+            }, function (razon) {
+                console.log(razon);
+                swal("Incorrecto", "Error", "error");
+            })
+        } else {
+            swal("Incorrecto", "Faltan datos", "error");
+        }
     }
 });
