@@ -34,6 +34,16 @@ dashboard.controller("registrarContenidoController", function ($scope, $http, $r
         }
     ];
 
+    $scope.areaConocimiento = [
+        { descripcion: "Ciencias Fisico-Matematicas y de las ingenierias" },
+        { descripcion: "Ciencias Biologicas, Quimicas y de la Salud" },
+        { descripcion: "Humanidades y de las Artes" },
+        { descripcion: "Ciencias Sociales" },
+        { descripcion: "Matematicas y ciencias experimentales" },
+        { descripcion: "Comunicacion" },
+        { descripcion: "Ciencias Sociales y Humanidades" }
+    ];
+
     $scope.validar = function () {
         for (var i = 0; i < ($scope.esquema.length + 1); i++) {
             /*if (i >= $scope.esquema.length) {
@@ -43,10 +53,25 @@ dashboard.controller("registrarContenidoController", function ($scope, $http, $r
             if ($scope.esquema[i].original === $routeParams.tipoContenido) {
                 $scope.archivo.tipo = $scope.esquema[i].nombre;
                 $scope.archivo.extenciones = $scope.esquema[i].formatos;
-                //$scope.listarArchivosPorTipo($scope.archivo.tipo);
+                $scope.listarArchivosPorTipo($scope.archivo.tipo);
                 $scope.verSeccion('principal');
                 break;
             }
         }
     };
+
+    $scope.listarArchivosPorTipo = function (tipo) {
+        console.log("TIPO: " + tipo);
+        $http({
+            url: '/archivos/' + tipo,
+            method: 'GET'
+        }).then(function (response) {
+            $scope.listarArchivosPorTipo = response.data;
+            console.log("Tabla de: " + tipo);
+            console.log(response.data);
+        }, function (reason) {
+            console.log("REASON: " + reason);
+            $scope.listarArchivosPorTipo = [];
+        })
+    }
 });
