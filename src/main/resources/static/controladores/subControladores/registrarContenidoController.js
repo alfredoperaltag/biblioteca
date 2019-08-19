@@ -3,6 +3,7 @@ dashboard.controller("registrarContenidoController", function ($scope, $http, $r
     $scope.archivo = {};
     $scope.fecha = Date.now();
     $scope.listaArchivosPorTipo = [];
+    $scope.archivoEditar = {};
     $scope.tagsParaEditar = [];
 
     $scope.Seccion = function (accion) {
@@ -46,7 +47,7 @@ dashboard.controller("registrarContenidoController", function ($scope, $http, $r
     ];
 
     $scope.validar = function () {
-        for (var i = 0; i < ($scope.esquema.length + 1); i++) {
+        for (var i = 0; i < ($scope.esquema.length); i++) {
             /*if (i >= $scope.esquema.length) {
                 $scope.cambiarVista('/menucontenido');
                 break;
@@ -80,7 +81,7 @@ dashboard.controller("registrarContenidoController", function ($scope, $http, $r
         if (esValido) {
             $scope.archivo.etiqueta = $scope.tags.join().toString();
             $scope.archivo.tipo = $scope.tipoContenido;
-            for (var i = 0; i < ($scope.esquema.length + 1); i++) {
+            for (var i = 0; i < ($scope.esquema.length); i++) {
                 if ($scope.esquema[i].original === $scope.tipoContenido) {
                     $scope.archivo.extenciones = $scope.esquema[i].formatos;
                     break;
@@ -106,5 +107,12 @@ dashboard.controller("registrarContenidoController", function ($scope, $http, $r
         } else {
             swal("Incorrecto", "Faltan datos", "error");
         }
+    }
+
+    $scope.iniciarEdicion = function (archivo) {
+        $scope.archivoEditar = archivo;
+        $scope.tagsParaEditar = $scope.archivoEditar.etiqueta.split(',');
+        $scope.archivoEditar.anio = new Date(archivo.anio)
+        $scope.verSeccion('edicion');
     }
 });
