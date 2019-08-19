@@ -135,6 +135,7 @@ dashboard.controller("registrarContenidoController", function ($scope, $http, $r
             })
         } else {
             swal("Incorrecto", "Faltan datos", "error");
+            $scope.listarArchivosPorTipo($scope.archivo.tipo);
         }
     }
 });
