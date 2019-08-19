@@ -115,4 +115,26 @@ dashboard.controller("registrarContenidoController", function ($scope, $http, $r
         $scope.archivoEditar.anio = new Date(archivo.anio)
         $scope.verSeccion('edicion');
     }
+
+    $scope.editarArchivo = function (esValido) {
+        if (esValido) {
+            $scope.archivoEditar.etiqueta = $scope.tagsParaEditar.join().toString();
+            $http({
+                url: '/archivos', method: 'PUT', data: $scope.archivoEditar
+            }).then(function (respuesta) {
+                if (respuesta.data === true) {
+                    console.log(respuesta);
+                    swal("Correcto", "¡Se actualizo el archivo correctamente!", "success")
+                    $scope.verSeccion('principal');
+                } else {
+                    swal("Error", "Algo salio mal", "warning")
+                }
+            }, function (razon) {
+                console.log(razon);
+                swal("Incorrecto", "Error", "error");
+            })
+        } else {
+            swal("Incorrecto", "Faltan datos", "error");
+        }
+    }
 });

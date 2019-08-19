@@ -42,7 +42,22 @@ public class ArchivosController {
         }
     }
 
-
+    @RequestMapping(path="archivos",method = RequestMethod.PUT)
+    public @ResponseBody boolean actualizarArchivo(@RequestBody String archivoJSON){
+        try{
+            Archivos archivo = new Archivos();
+            archivo = mapper.readValue(archivoJSON, Archivos.class);
+            log.info("Se recibio del formulario: \n"+archivo.toString());
+            if (archivosService.actualizarArchivo(archivo)){
+                log.info("Se actualizo el archivo correctamente");
+                return true;
+            }
+            return false;
+        }catch (Exception ex){
+            log.error("ERROR: "+ex.getMessage());
+            return false;
+        }
+    }
 
     @RequestMapping(path = "archivos/{tipo}", method = RequestMethod.GET)
     //public @ResponseBody int CantidadDeArchivos(@PathVariable("tipo")String tipoArchivo){
