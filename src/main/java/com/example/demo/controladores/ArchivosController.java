@@ -78,4 +78,19 @@ public class ArchivosController {
             return null;
         }
     }
+
+    @RequestMapping(path = "archivos",method = RequestMethod.DELETE)
+    public @ResponseBody boolean borrarArchivo(@RequestBody String archivoJSON){
+        try {
+            if (archivoJSON!=null){
+                Archivos archivo = mapper.readValue(archivoJSON, Archivos.class);
+                return archivosService.borrarArchivo(archivo);
+            }
+            log.warn("El archivo llega vacio");
+            return false;
+        }catch (Exception ex){
+            log.error(ex.getMessage());
+            return false;
+        }
+    }
 }

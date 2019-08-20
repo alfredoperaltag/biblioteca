@@ -154,14 +154,14 @@ dashboard.controller("registrarContenidoController", function ($scope, $http, $r
                     url: '/archivos', method: 'DELETE', data: archivo
                 }).then(function (response) {
                     if (response.data === true) {
-                        swal("¡Borrado!", archivo.tipo + "ha sido borrado.", "success");
+                        swal("¡Borrado!", archivo.tipo + " ha sido borrado.", "success");
                         $scope.validar();
                     } else {
-                        swal("¡Oops!", "¡" + archivo.tipo + "No se puedo borrar, reinteta por favor!", "error");
+                        swal("¡Oops!", "¡" + archivo.tipo + "No se pudo borrar, reinteta por favor!", "error");
                     }
                 }, function (reason) {
                     console.log(reason);
-                    swal("¡Oops!", "¡" + archivo.tipo + "No se puedo borrar, reinteta por favor!", "error");
+                    swal("¡Oops!", "¡" + archivo.tipo + "No se pudo borrar, reinteta por favor!", "error");
                 });
             });
     }
