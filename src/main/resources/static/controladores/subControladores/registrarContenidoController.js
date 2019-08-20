@@ -138,4 +138,31 @@ dashboard.controller("registrarContenidoController", function ($scope, $http, $r
             $scope.listarArchivosPorTipo($scope.archivo.tipo);
         }
     }
+
+    $scope.borrarArchivo = function (archivo) {
+        swal({
+            title: "¿Estas seguro?",
+            text: "¡Esta opcion es permanente y no podras recuperar el registro: " + archivo.titulo + "!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "¡Si, borrar!",
+            closeOnConfirm: false
+        },
+            function () {
+                $http({
+                    url: '/archivos', method: 'DELETE', data: archivo
+                }).then(function (response) {
+                    if (response.data === true) {
+                        swal("¡Borrado!", archivo.tipo + "ha sido borrado.", "success");
+                        $scope.validar();
+                    } else {
+                        swal("¡Oops!", "¡" + archivo.tipo + "No se puedo borrar, reinteta por favor!", "error");
+                    }
+                }, function (reason) {
+                    console.log(reason);
+                    swal("¡Oops!", "¡" + archivo.tipo + "No se puedo borrar, reinteta por favor!", "error");
+                });
+            });
+    }
 });
